@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-11-18T21:44:23+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">13carpileup</title><subtitle>a student with no idea what they&apos;re doing</subtitle><author><name>alex</name></author><entry><title type="html">HKCERT CTF 2024 - Cook book</title><link href="http://localhost:4000/jekyll/update/2024/11/18/welcome-to-jekyll.html" rel="alternate" type="text/html" title="HKCERT CTF 2024 - Cook book" /><published>2024-11-18T20:00:00+08:00</published><updated>2024-11-18T20:00:00+08:00</updated><id>http://localhost:4000/jekyll/update/2024/11/18/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/11/18/welcome-to-jekyll.html"><![CDATA[<p>Feeling defeated by my failure to solve any of the ‘hard’ crypto problems on display at HKCERT CTF, I turned my attention to Cook Book: it had the fewest lines of code. Therefore, it should be the easiest. Look at how few lines of code there are:</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-11-18T21:50:24+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">13carpileup</title><subtitle>a student with no idea what they&apos;re doing</subtitle><author><name>alex</name></author><entry><title type="html">HKCERT CTF 2024 - Cook book</title><link href="http://localhost:4000/jekyll/update/2024/11/18/welcome-to-jekyll.html" rel="alternate" type="text/html" title="HKCERT CTF 2024 - Cook book" /><published>2024-11-18T20:00:00+08:00</published><updated>2024-11-18T20:00:00+08:00</updated><id>http://localhost:4000/jekyll/update/2024/11/18/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2024/11/18/welcome-to-jekyll.html"><![CDATA[<p>Feeling defeated by my failure to solve any of the ‘hard’ crypto problems on display at HKCERT CTF, I turned my attention to Cook Book: it had the fewest lines of code. Therefore, it should be the easiest. Look at how few lines of code there are:</p>
 
 <figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="n">Crypto.Cipher</span> <span class="kn">import</span> <span class="n">AES</span>
 <span class="kn">from</span> <span class="n">Crypto.Util.Padding</span> <span class="kn">import</span> <span class="n">pad</span><span class="p">,</span> <span class="n">unpad</span>
@@ -44,8 +44,9 @@
     <span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="nf">hash</span><span class="p">(</span><span class="n">block</span><span class="p">)</span> <span class="o">%</span> <span class="mi">256</span><span class="p">,</span> <span class="p">(</span><span class="nf">hash</span><span class="p">(</span><span class="n">block</span><span class="p">)</span> <span class="o">//</span> <span class="mi">256</span><span class="p">)</span> <span class="o">%</span> <span class="mi">256</span><span class="p">,</span> <span class="p">(</span><span class="nf">hash</span><span class="p">(</span><span class="n">block</span><span class="p">)</span> <span class="o">//</span> <span class="mi">65536</span><span class="p">)</span> <span class="o">%</span> <span class="mi">256</span><span class="p">)</span>
     <span class="n">pixels</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">color</span></code></pre></figure>
 
-<p>Which returns the following image:
-<img src="src/image.png" alt="output" /></p>
+<p>Which returns the following image:</p>
+
+<p><img src="/src/image.png" alt="output" /></p>
 
 <p>Uh… There definitely seems to be some data… It’s just not entirely… comprehensible. Maybe the dimensions are the problem: it looks like if everything was lined up better, there might be something interesting. As we still can’t find a definite resolution, what if we just brute-force it instead? We can just loop over every possible resolution, then go through them to see what happened.</p>
 
@@ -55,12 +56,12 @@
 
     <span class="n">image</span><span class="p">.</span><span class="nf">save</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">output/</span><span class="si">{</span><span class="n">width</span><span class="si">}</span><span class="s">-</span><span class="si">{</span><span class="n">height</span><span class="si">}</span><span class="s">-output.png</span><span class="sh">"</span><span class="p">)</span></code></pre></figure>
 
-<p>Now, we can go through each image one by one and… WOW!!!! LOOK AT THAT!!!</p>
+<p>Now, we can go through each image one by one and… WOW!!!! LOOK AT THAT!!</p>
 
-<p><img src="src/almostflag.png" alt="almost" /></p>
+<p><img src="/src/almostflag.png" alt="almost" /></p>
 
 <p>If we just mirror and reverse it, we get…</p>
 
-<p><img src="src/flag.png" alt="almost" /></p>
+<p><img src="/src/flag.png" alt="almost" /></p>
 
 <p><code class="language-plaintext highlighter-rouge">hkcert24{do_you_know_the_cool_penguin}</code>. herherha</p>]]></content><author><name>alex</name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Feeling defeated by my failure to solve any of the ‘hard’ crypto problems on display at HKCERT CTF, I turned my attention to Cook Book: it had the fewest lines of code. Therefore, it should be the easiest. Look at how few lines of code there are:]]></summary></entry></feed>

@@ -57,7 +57,8 @@ else:
 {% endhighlight %}
 
 Which returns the following image:
-![output](src/image.png)
+
+![output](/src/image.png)
 
 Uh... There definitely seems to be some data... It's just not entirely... comprehensible. Maybe the dimensions are the problem: it looks like if everything was lined up better, there might be something interesting. As we still can't find a definite resolution, what if we just brute-force it instead? We can just loop over every possible resolution, then go through them to see what happened.
 
@@ -69,12 +70,12 @@ for width in range(100,1000, 10):
     image.save(f"output/{width}-{height}-output.png")
 {% endhighlight %}
 
-Now, we can go through each image one by one and... WOW!!!! LOOK AT THAT!!!
+Now, we can go through each image one by one and... WOW!!!! LOOK AT THAT!!
 
-![almost](src/almostflag.png)
+![almost](/src/almostflag.png)
 
 If we just mirror and reverse it, we get...
 
-![almost](src/flag.png)
+![almost](/src/flag.png)
 
 `hkcert24{do_you_know_the_cool_penguin}`. herherha
